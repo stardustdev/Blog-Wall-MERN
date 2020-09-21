@@ -1,0 +1,17 @@
+@import 'resources/styles/colors.scss';
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+
+  &.active {
+    color: $blue;
+  }
+
+  span {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+}

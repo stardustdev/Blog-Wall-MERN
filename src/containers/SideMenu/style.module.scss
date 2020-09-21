@@ -1,0 +1,26 @@
+@import 'resources/styles/colors.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid $grey;
+
+  h3 {
+    margin-bottom: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .menuItems {
+    flex: auto;
+
+    a {
+      color: unset;
+
+      &:hover {
+        text-decoration: none;
+        color: $blue;
+      }
+    }
+  }
+}

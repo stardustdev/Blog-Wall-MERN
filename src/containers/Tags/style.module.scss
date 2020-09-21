@@ -1,0 +1,44 @@
+@import 'resources/styles/colors.scss';
+
+.container {
+  margin-top: 20px;
+
+  .title {
+    padding: 10px 15px;
+
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      color: $white;
+    }
+  }
+
+  .category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-top: 1px solid $blueMist;
+
+    span {
+      font-size: 16px;
+      font-weight: 400;
+      color: $white;
+    }
+  }
+
+  .footer {
+    display: flex;
+    border-top: 1px solid $blueMist;
+    padding: 6px 15px;
+    justify-content: flex-end;
+
+    span {
+      font-size: 15px;
+      font-weight: 600;
+      color: $blue;
+      cursor: pointer;
+    }
+  }
+}

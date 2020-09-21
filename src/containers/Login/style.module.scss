@@ -1,0 +1,61 @@
+@import 'resources/styles/colors.scss';
+
+.container {
+  width: 100%;
+  background-color: rgba($black, 0.8);
+  padding-bottom: 20px;
+
+  .cardHeader {
+    h3 {
+      text-align: center;
+      color: $white;
+      margin-top: 10px;
+    }
+  }
+
+  .cardBody {
+    .formField {
+      height: 65px;
+      margin-bottom: 0;
+
+      input {
+        font-size: 15px;
+        background: transparent;
+        color: $white;
+
+        &:focus {
+          border-color: $blue;
+        }
+
+        &::placeholder {
+          font-weight: 200;
+        }
+      }
+
+      span {
+        font-size: 14px;
+        color: $red;
+        margin-left: 10px;
+      }
+    }
+
+    .submit {
+      float: right;
+    }
+  }
+
+  .cardFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: $white;
+    font-weight: 500;
+    margin-top: 20px;
+
+    span {
+      margin-left: 5px;
+      color: $blue;
+      cursor: pointer;
+    }
+  }
+}

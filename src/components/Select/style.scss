@@ -1,0 +1,51 @@
+@import 'resources/styles/colors.scss';
+
+#root {
+  .select {
+    .btn {
+      width: 200px;
+      padding: 5px 10px;
+      text-align: left;
+      position: relative;
+      border: 1px solid $blueMist;
+      background: transparent;
+      color: $white;
+      font-weight: 400;
+      height: 36px;
+      font-size: 15px;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:after {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+      }
+    }
+
+    .dropdown-menu {
+      width: 200px;
+      background: $blackMist;
+
+      button {
+        padding: 5px 10px;
+        background: $blackMist;
+        color: $blueMist;
+        font-size: 15px;
+
+        &:hover {
+          background: darken($blackMist, 1.5);
+        }
+
+        &:focus,
+        &:active {
+          border: none;
+          outline: none;
+          background: darken($blackMist, 3);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import 'resources/styles/colors.scss';
+
+.container {
+  > button:first-of-type {
+    padding: 0 !important;
+    background: none;
+    border: none;
+
+    &:focus {
+      background: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  > div {
+    background: $blackMist;
+
+    button {
+      background: $blackMist;
+      color: $white;
+      font-size: 15px;
+
+      &:hover {
+        color: $white;
+        background: darken($blackMist, 1.5);
+      }
+
+      &:focus,
+      &:active {
+        border: none;
+        outline: none;
+        background: darken($blackMist, 3);
+      }
+    }
+  }
+}

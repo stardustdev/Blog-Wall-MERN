@@ -1,0 +1,31 @@
+@import 'resources/styles/colors.scss';
+
+.container {
+  display: grid;
+  grid-template-columns: 200px auto 250px;
+
+  > div {
+    padding: 20px 0;
+    overflow-y: auto;
+    height: 100vh;
+
+    &:nth-of-type(2) {
+      padding: 30px 20px;
+    }
+
+    &:last-of-type {
+      padding: 20px 15px;
+      border-left: 1px solid $grey;
+    }
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  .container {
+    grid-template-columns: 180px auto;
+
+    > div:last-of-type {
+      display: none;
+    }
+  }
+}

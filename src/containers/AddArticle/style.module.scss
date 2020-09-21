@@ -1,0 +1,31 @@
+@import 'resources/styles/colors.scss';
+
+.container {
+  border: 1px solid $grey;
+  border-radius: 5px;
+
+  textarea {
+    width: 100%;
+    background: transparent;
+    color: $white;
+    padding: 20px;
+    border: none;
+    resize: none;
+
+    &::placeholder {
+      color: $grey;
+      font-weight: 200;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px 5px 10px;
+    border-top: 1px solid $grey;
+  }
+}

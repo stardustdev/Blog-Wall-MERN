@@ -1,0 +1,79 @@
+@import 'resources/styles/colors.scss';
+
+.container {
+  width: 400px;
+  height: 80px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba($black, 0.16);
+  padding: 0;
+  padding-left: 15px;
+  padding-right: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $white;
+  opacity: 0;
+  transform: scale(1);
+
+  transition: transform 0.2s, opacity 0.2s;
+  margin-bottom: 20px;
+}
+.exited {
+  transform: scale(0.5);
+  opacity: 0;
+}
+.entering {
+  transform: scale(0.75);
+  opacity: 0;
+}
+.entered {
+  transform: scale(1);
+  opacity: 1;
+}
+.exiting {
+  transform: scale(0.75);
+  opacity: 0;
+}
+
+.iconContainer {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .statusIcon {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+.inner {
+  font-weight: 400;
+  font-size: 15px;
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  span {
+    font-weight: 700;
+  }
+}
+
+.closeContainer {
+  margin-left: auto;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: 36px;
+  font-weight: 300;
+  color: $blueMist;
+  transform: scale(1);
+  transition: transform 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
