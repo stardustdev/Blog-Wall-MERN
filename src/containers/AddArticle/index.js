@@ -24,7 +24,7 @@ const AddArticle = () => {
         articleActions.addArticleRequest({
           content,
           tag,
-        }),
+        })
       );
     }
   };
@@ -45,7 +45,12 @@ const AddArticle = () => {
           disabled={loading}
           onSelect={(option) => setTag(option.name)}
         />
-        <Button color="primary" outline disabled={!content || loading} onClick={handleSubmit}>
+        <Button
+          color="primary"
+          outline
+          disabled={!content || loading}
+          onClick={handleSubmit}
+        >
           Post
         </Button>
       </div>

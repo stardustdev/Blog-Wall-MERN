@@ -40,7 +40,9 @@ const Article = ({ article, showInput }) => {
     isLiked,
   } = article;
   const isFavorited =
-    user && user.favorites && user.favorites.map(({ _id }) => _id).includes(article._id);
+    user &&
+    user.favorites &&
+    user.favorites.map(({ _id }) => _id).includes(article._id);
 
   useEffect(() => {
     if (content === articleContent) {
@@ -61,24 +63,33 @@ const Article = ({ article, showInput }) => {
       articleActions.editArticleRequest(article._id, {
         content,
         tag: article.tag,
-      }),
+      })
     );
   };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      dispatch(articleActions.addCommentRequest(article._id, { content: comment }));
+      dispatch(
+        articleActions.addCommentRequest(article._id, { content: comment })
+      );
       setComment('');
       setShowComments(true);
     }
   };
 
   const handleAction = () => {
-    dispatch(articleActions.likeArticleRequest({ id: article._id, liked: !isLiked }));
+    dispatch(
+      articleActions.likeArticleRequest({ id: article._id, liked: !isLiked })
+    );
   };
 
   const handleFavoriteAction = () => {
-    dispatch(articleActions.favoriteArticleRequest({ id: article._id, isFavorited: !isFavorited }));
+    dispatch(
+      articleActions.favoriteArticleRequest({
+        id: article._id,
+        isFavorited: !isFavorited,
+      })
+    );
   };
 
   return (
@@ -114,7 +125,12 @@ const Article = ({ article, showInput }) => {
                 onChange={(e) => setContent(e.target.value)}
               />
               <div className={style.contentEditAction}>
-                <Button outline color="danger" size="sm" onClick={() => setEditArticle(false)}>
+                <Button
+                  outline
+                  color="danger"
+                  size="sm"
+                  onClick={() => setEditArticle(false)}
+                >
                   Cancel
                 </Button>
                 <Button
@@ -130,7 +146,11 @@ const Article = ({ article, showInput }) => {
             </div>
           ) : (
             <React.Fragment>
-              <ReadMoreAndLess charLimit={210} readMoreText="Read more" readLessText="Read less">
+              <ReadMoreAndLess
+                charLimit={210}
+                readMoreText="Read more"
+                readLessText="Read less"
+              >
                 {articleContent}
               </ReadMoreAndLess>
 
@@ -155,13 +175,22 @@ const Article = ({ article, showInput }) => {
                 <span>{`${comments.length || 0} Comments`}</span>
               </div>
             </div>
-            <div className={style.btnComment} onClick={() => setShowComments(!showComments)}>
-              {!!comments.length && <span>{showComments ? 'hide' : 'show'} comments</span>}
+            <div
+              className={style.btnComment}
+              onClick={() => setShowComments(!showComments)}
+            >
+              {!!comments.length && (
+                <span>{showComments ? 'hide' : 'show'} comments</span>
+              )}
             </div>
           </div>
           {showInput && (
             <div className={style.row}>
-              <img src={defaultAvatar} className={style.avatar} alt="user-avatar" />
+              <img
+                src={defaultAvatar}
+                className={style.avatar}
+                alt="user-avatar"
+              />
               <input
                 className={style.input}
                 value={comment}
